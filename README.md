@@ -1,2 +1,2 @@
 # BlackQuartzGlassUI
-A collection of UI elements, guidelines, etc. made for Nuxt
+A collection of UI elements made for Nuxt, guidelines, etc.
