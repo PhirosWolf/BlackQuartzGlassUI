@@ -17,7 +17,7 @@ function toggleDarkMode () {
       id="bases"
     >
       <h2 class="text-4xl">Bases</h2>
-      <div class="flex flex-row flex-wrap space-x-2 space-y-2">
+      <div class="space-x-2 space-y-2">
         <BaseButton>BaseButton</BaseButton>
         <BaseButtonPrimary>BaseButtonPrimary</BaseButtonPrimary>
       </div>
@@ -26,8 +26,11 @@ function toggleDarkMode () {
       id="buttons"
     >
       <h2 class="text-4xl">Buttons</h2>
-      <div class="flex flex-row flex-wrap space-x-2 space-y-2">
-        <ButtonPrimaryLarge class="max-w-sm">ButtonPrimaryLarge</ButtonPrimaryLarge>
+      <div class="space-x-2 space-y-2">
+        <ButtonPrimaryVeryLarge>ButtonPrimaryVeryLarge</ButtonPrimaryVeryLarge>
+        <ButtonPrimaryLarge>ButtonPrimaryLarge</ButtonPrimaryLarge>
+        <ButtonPrimaryMedium>ButtonPrimaryMedium</ButtonPrimaryMedium>
+        <ButtonPrimarySmall>ButtonPrimarySmall</ButtonPrimarySmall>
       </div>
     </section>
   </div>

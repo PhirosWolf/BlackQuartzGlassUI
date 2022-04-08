@@ -2,7 +2,7 @@
 
 <template>
   <BaseButtonPrimary
-    class="px-12 py-4 text-lg"
+    class="px-8 py-2 text-md"
   ><slot /></BaseButtonPrimary>
 </template>
 

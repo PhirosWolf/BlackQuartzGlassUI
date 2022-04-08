@@ -19,6 +19,7 @@ module.exports = {
           300: hsbToHex(268, 60, 90),
           400: hsbToHex(268, 80, 85),
           500: hsbToHex(268, 100, 85),
+          550: hsbToHex(268, 100, 73),
           600: hsbToHex(268, 100, 60),
           700: hsbToHex(268, 100, 40),
           900: hsbToHex(268, 100, 20)
