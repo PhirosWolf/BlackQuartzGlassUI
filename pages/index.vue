@@ -1,17 +1,21 @@
 <script lang="ts" setup>
+const isInDarkMode = ref(false);
+
 function toggleDarkMode () {
   const html = document.querySelector('html');
   const hasClassBeenAdded = html?.classList?.toggle('dark');
   if (hasClassBeenAdded !== null) {
-    console.log(hasClassBeenAdded ? 1 : 0);
-    localStorage.setItem('isInDarkTheme', hasClassBeenAdded ? 1 : 0);
+    isInDarkMode.value = hasClassBeenAdded;
+    localStorage.setItem('isInDarkMode', hasClassBeenAdded ? 1 : 0);
   }
 }
 
 onMounted(() => {
-  if (parseInt(localStorage.getItem('isInDarkTheme')) === 1) {
+  if (parseInt(localStorage.getItem('isInDarkMode')) === 1) {
     const html = document.querySelector('html');
     const classList = html?.classList;
+    isInDarkMode.value = true;
+
     if (classList !== null && !classList.contains('dark')) {
       classList.add('dark');
     }
@@ -50,6 +54,26 @@ onMounted(() => {
         <ButtonSecondaryLarge>ButtonSecondaryLarge</ButtonSecondaryLarge>
         <ButtonSecondaryMedium>ButtonSecondaryMedium</ButtonSecondaryMedium>
         <ButtonSecondarySmall>ButtonSecondarySmall</ButtonSecondarySmall>
+        <ButtonPrimaryIcon>
+          <!-- https://tablericons.com/ -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" />
+            <line x1="12" y1="12" x2="20" y2="7.5" />
+            <line x1="12" y1="12" x2="12" y2="21" />
+            <line x1="12" y1="12" x2="4" y2="7.5" />
+          </svg>
+        </ButtonPrimaryIcon>
+        <ButtonSecondaryIcon>
+          <!-- https://tablericons.com/ -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-box" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" />
+            <line x1="12" y1="12" x2="20" y2="7.5" />
+            <line x1="12" y1="12" x2="12" y2="21" />
+            <line x1="12" y1="12" x2="4" y2="7.5" />
+          </svg>
+        </ButtonSecondaryIcon>
       </div>
     </section>
   </div>
