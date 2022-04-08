@@ -1,8 +1,22 @@
 <script lang="ts" setup>
 function toggleDarkMode () {
   const html = document.querySelector('html');
-  html?.classList?.toggle('dark');
+  const hasClassBeenAdded = html?.classList?.toggle('dark');
+  if (hasClassBeenAdded !== null) {
+    console.log(hasClassBeenAdded ? 1 : 0);
+    localStorage.setItem('isInDarkTheme', hasClassBeenAdded ? 1 : 0);
+  }
 }
+
+onMounted(() => {
+  if (parseInt(localStorage.getItem('isInDarkTheme')) === 1) {
+    const html = document.querySelector('html');
+    const classList = html?.classList;
+    if (classList !== null && !classList.contains('dark')) {
+      classList.add('dark');
+    }
+  }
+});
 </script>
 
 <template>
@@ -17,20 +31,25 @@ function toggleDarkMode () {
       id="bases"
     >
       <h2 class="text-4xl">Bases</h2>
-      <div class="space-x-2 space-y-2">
+      <div class="space-x-4 space-y-4">
         <BaseButton>BaseButton</BaseButton>
         <BaseButtonPrimary>BaseButtonPrimary</BaseButtonPrimary>
+        <BaseButtonSecondary>BaseButtonSecondary</BaseButtonSecondary>
       </div>
     </section>
     <section
       id="buttons"
     >
       <h2 class="text-4xl">Buttons</h2>
-      <div class="space-x-2 space-y-2">
+      <div class="space-x-4 space-y-4">
         <ButtonPrimaryVeryLarge>ButtonPrimaryVeryLarge</ButtonPrimaryVeryLarge>
         <ButtonPrimaryLarge>ButtonPrimaryLarge</ButtonPrimaryLarge>
         <ButtonPrimaryMedium>ButtonPrimaryMedium</ButtonPrimaryMedium>
         <ButtonPrimarySmall>ButtonPrimarySmall</ButtonPrimarySmall>
+        <ButtonSecondaryVeryLarge>ButtonSecondaryVeryLarge</ButtonSecondaryVeryLarge>
+        <ButtonSecondaryLarge>ButtonSecondaryLarge</ButtonSecondaryLarge>
+        <ButtonSecondaryMedium>ButtonSecondaryMedium</ButtonSecondaryMedium>
+        <ButtonSecondarySmall>ButtonSecondarySmall</ButtonSecondarySmall>
       </div>
     </section>
   </div>

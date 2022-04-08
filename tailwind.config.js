@@ -15,7 +15,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bqgpurple:{
+        bqgpurple: {
+          200: hsbToHex(268, 40, 100),
           300: hsbToHex(268, 60, 90),
           400: hsbToHex(268, 80, 85),
           500: hsbToHex(268, 100, 85),
